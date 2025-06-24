@@ -1,0 +1,162 @@
+Point 1: Introduction and vague PS
+
+    Interviewer:-
+        Lets start with a basic PS, design tic-tac-toe
+
+    Candidate :-
+        Certainly! Let me outline the flow of the game based on my understanding of Tic Tac Toe.
+
+        -> We have a standard grid of 3x3
+        -> 2 palyers take turns marking the spaces on the grid with X and O
+        -> The game continues until :-
+            i) One player gets 3 mark in a row (horizontal, vertical or diagonal)
+            ii) The board is completely filled resulting in a draw.
+        Is it alright?
+
+    Interviewer :-
+        Yes, go ahead
+
+    Candidate :-
+
+        Sure, I'd like to clarify few requirements :-
+            1) Are we using standard 3x3 board?
+            2) Will this be 2 player human game?
+            3) What are the core requirements?
+
+
+Point 2: Clarifying requirements
+
+        Interviewer:-
+            We want a simple system that:-
+                -> Supports a standard 3x3 TicTacToe game
+                -> Allows 2 humans to play
+                -> Provides move validation
+                -> Detects win or draw conditions
+
+        Candidate:-
+
+            1) A 3x3 game baord
+            2) 2 human players
+            3) Move validation
+            4) detection of wins and draws
+            5) X and O moves
+
+
+        Interviewer :-
+                Yes, go ahead
+
+Point 3: Identifying key components
+
+        Candidate :-
+            Now that we have the requirements clarified, let's identify the key components
+            of our TicTacToe system
+
+         1) Piece:-
+                Class: Symbol (Enum)
+                Desc: Represents the cell occupancies
+         2) Board :-
+                 Class: Board
+                 Desc: Represents the game board, including methods for:-
+                            i) Making moves
+                            ii) Validating moves
+                            iii) Checking of game state
+
+         3) Player:-
+                Class: Player
+                Desc:
+                    i)  respresents a player in the game
+                    ii) stores symbol
+                    iii) contains the logic for making move
+
+
+Point 4:  Design challenges
+
+        Interviewer :
+
+            What design challenges do you anticipate?
+
+        Candidate :
+
+            The key challenges for designing the tic-tac-toe game includes:
+
+            1) Managing game state :-
+                Ensuring the system accurately tracks: -
+                    i) Player turns
+                    ii) Current board status
+                    iii) Game completion conditions
+
+            2) Implementing move validation :-
+
+                Verifying that each move is :
+                    i) Leagl
+                    ii) Within the bounds of the game
+                    iii) Made in an empty cell
+
+            3) Tracking player turns :
+
+                   -> Ensuring proper alternations between 'X' and 'O' after each valid move.
+
+            4) Detecting game-ending conditions :
+
+                    Checking for :
+                        i) Wins in a row  (player has 3 symbols in a row)
+                        ii) A draw scenario (no more empty cells)
+
+
+Point 5 : Approach
+
+        Interviewer:
+            How'd you approach these challenges to ensure our game doesn't break?
+
+        Candidate :
+
+            Here's my approach :
+                1) Strategy pattern for player interactions :
+
+                    i) Ensures players interact with the system through a consistent interface
+                    ii) Allows fleexible player move impl, supporting :-
+                        a) Human players
+                        b) AI players (future expansion)
+
+                        Example : A Player interface with a makeMove() method
+                                  implemented differently for humans and AI players
+                2) State pattern for game management
+
+                    Manages different game states :
+
+                        i) In progress
+                        ii) Won
+                        iii) Draw
+
+                    Example : A GameState class with methods to transition between states based
+                              on game conditions
+
+                3) Observer Pattern for Game Event Tracking :
+
+                    i) Notifies listeners when game state changes
+                    ii) Supports potential future extensions ( like logging,notifications or UI updates )
+
+                    Example: A GameEventListener that gets notified when :
+                                i) A player makes a move
+                                ii) The game state changes
+
+                4) factory pattern for player creation
+
+                    i) Ensures consistent player creation using a factory method
+                    ii) Allows easy addition of new players (e.g. AI opponents)
+
+                    Example : A PlayerFactory that creates instances of humans
+                              or AI players based on configuration
+
+
+
+
+
+
+
+
+
+
+
+
+

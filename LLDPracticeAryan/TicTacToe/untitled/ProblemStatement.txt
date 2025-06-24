@@ -1,0 +1,30 @@
+Low Level Design of Tic Tac Toe game
+
+Tic Tac Toe also known as Xs and Os is 2-player game played on a 3x3 grid
+
+Objective:- While the rules are simple, devising an unbeatable strategy requires a keen understanding of the game's dynamics
+
+Rules of the game :-
+    1) The game is played on 3x3 grid
+    2) One player uses X and the other uses O
+    3) Players take turns making their moves
+
+ Winner :-
+
+    1. The game is won by the player who places their symbol in a row, column or diagonal
+    2. The first player to get three symbols in a row wins the game
+    3. Once this condition is met, the game is ended immediately
+
+ Draw :-
+
+        1. If all grid cells are filled and no player has three symbols in a row, the game ends in a tie.
+
+
+ Illegal moves :-
+
+ A player cannot:-
+
+    1) Place a symbol on a tile already occupied by an opponent's symbol.
+    2) Place their symbol on a tile they already own
+    3) Move to a non-empty cell -  the move must be made to an empty space.
+
