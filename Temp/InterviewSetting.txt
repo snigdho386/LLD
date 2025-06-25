@@ -114,7 +114,7 @@ Point 5 : Approach
                 1) Strategy pattern for player interactions :
 
                     i) Ensures players interact with the system through a consistent interface
-                    ii) Allows fleexible player move impl, supporting :-
+                    ii) Allows flexible player move impl, supporting :-
                         a) Human players
                         b) AI players (future expansion)
 
