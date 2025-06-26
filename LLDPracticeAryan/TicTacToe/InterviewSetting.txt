@@ -88,7 +88,7 @@ Point 4:  Design challenges
             2) Implementing move validation :-
 
                 Verifying that each move is :
-                    i) Leagl
+                    i) Legal
                     ii) Within the bounds of the game
                     iii) Made in an empty cell
 
