@@ -1,0 +1,69 @@
+Design a chess game 
+
+ChessGame:- 
+	
+	-> Board 
+	-> Player[2]
+	
+	methods:-
+	
+	->startGame()
+
+ Player :-
+	-> userId 
+	-> isWhiteCell
+	-> Pieces vs Count (map)
+	
+ Board :-
+	
+	->Grid
+	->Current Player
+
+	methods :-
+
+	->Make Move() 
+
+ Move :- 
+	-> Player
+	-> Start Cell
+	-> End Cell
+	-> Piece
+
+	methods :- 
+
+	-> boolean isPossible()
+				
+
+ 
+ Cell :- 
+	-> Row 
+	-> Col
+	-> Piece
+	-> Player
+
+
+ Piece:- 
+	
+	PieceStrategy:
+		
+		Passed as super from sub-class
+	
+	Piece sub-classes :
+		
+			->King
+			->Bishop
+			->Knight
+			->Pawn 
+			->Rook
+			->Queen 
+
+
+Piece Strategy :- 
+
+	->King Move 
+	->Bishop move 
+	->Knight Move 
+	->Pawn Move
+	->Rook Move
+	->Queen Move 
+		
